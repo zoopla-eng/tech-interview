@@ -1,13 +1,13 @@
-import { log } from "@repo/logger";
 import { Link } from "@repo/ui/link";
 import { CounterButton } from "@repo/ui/counter-button";
+import { MealsList } from '@repo/ui/hello'
+
 
 export const metadata = {
   title: "Store | Kitchen Sink",
 };
 
 export default function Store(): JSX.Element {
-  log("Hey! This is the Store page.");
 
   return (
     <div className="container">
@@ -26,6 +26,7 @@ export default function Store(): JSX.Element {
           Next.js
         </Link>
       </p>
+        <MealsList />
     </div>
   );
 }

@@ -17,6 +17,11 @@
       "types": "./src/link/index.tsx",
       "require": "./dist/link/index.js",
       "import": "./dist/link/index.mjs"
+    },
+    "./hello": {
+      "types": "./src/hello/index.tsx",
+      "require": "./dist/hello/index.js",
+      "import": "./dist/hello/index.mjs"
     }
   },
   "scripts": {
@@ -34,6 +39,8 @@
     "@repo/eslint-config": "*",
     "@repo/jest-presets": "*",
     "@repo/typescript-config": "*",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.1",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.62",

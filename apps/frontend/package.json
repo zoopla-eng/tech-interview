@@ -1,5 +1,5 @@
 {
-  "name": "storefront",
+  "name": "frontend",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,18 +12,24 @@
   },
   "dependencies": {
     "@repo/logger": "*",
+    "@repo/ui": "*",
+    "@repo/list": "*",
     "next": "^14.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@repo/ui": "*"
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.1"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.1.1",
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.1",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.62",
     "@types/react-dom": "^18.2.19",
-    "@repo/eslint-config": "*",
-    "@repo/typescript-config": "*",
+    "jest": "^29.7.0",
     "typescript": "^5.3.3"
   }
 }
