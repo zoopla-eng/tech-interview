@@ -1,40 +1,52 @@
-# Turborepo kitchen sink starter
+# Zoopla Full Stack Technical Interview
 
-This is an official starter Turborepo with multiple meta-frameworks all working in harmony and sharing packages.
+Hello, hola, bonjour, ciao, nǐ hǎo!
 
-This example also shows how to use [Workspace Configurations](https://turbo.build/repo/docs/core-concepts/monorepos/configuring-workspaces).
+This project is the starting point for the technical interview for the Full Stack Developer role at Zoopla. Please download it, get it running and familiarise yourself with the codebase before the interview. Note that if you're not comfortable with TypeScript, you can use JavaScript instead - it will still compile, you'll just get a bunch of linting errors.
 
-## Using this example
+You might also want to read the docs for any of the frameworks used in the project that you are not familiar with - but honestly this isn't required! If you can show us your thinking, fallback to pseudo code where useful, ask questions and use tools like Stack Overflow or Copilot where you're unsure, that's all we need. We're aiming to create a collaborative environment as close as possible to what you'd be doing in your day-to-day role at Zoopla.
 
-Run the following command:
+## Getting Started
 
-```sh
-npx create-turbo@latest -e kitchen-sink
+To get started, you'll need to have a relatively recent version of Node.js installed on your machine (check [package.json](./package.json) for minimum requirements). You can download it from [here](https://nodejs.org/en/download/), or use a tool like [NVM](https://github.com/nvm-sh/nvm) or [Volta](https://volta.sh/).
+
+Once you have Node.js installed, you can run the following commands to get the project up and running:
+
+```bash
+# Clone the repository
+git clone
+
+# Navigate into the project directory
+cd tech-interview
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
 ```
 
-## What's inside?
+At this point, you should be able to see a working page at [http://localhost:3002](http://localhost:3002). You can also check the API at the healthcheck endpoint at [http://localhost:5001/status](http://localhost:5001/status). And you can try the other commands in the [package.json](./package.json) - check that tests run and pass for instance.
 
-This Turborepo includes the following packages and apps:
+## What's Inside?
 
-### Apps and Packages
+You'll find a monorepo setup using [Turborepo](https://turbo.build/repo/docs), which we're using to help us manage multiple packages, a frontend and an api in a single repository. You'll be working in the following places (and shouldn't really have to touch anything else):
 
-- `api`: an [Express](https://expressjs.com/) server
-- `storefront`: a [Next.js](https://nextjs.org/) app
-- `admin`: a [Vite](https://vitejs.dev/) single page app
-- `blog`: a [Remix](https://remix.run/) blog
-- `@repo/eslint-config`: ESLint configurations used throughout the monorepo
-- `@repo/jest-presets`: Jest configurations
-- `@repo/logger`: isomorphic logger (a small wrapper around console.log)
-- `@repo/ui`: a dummy React UI library (which contains `<CounterButton>` and `<Link>` components)
-- `@repo/typescript-config`: tsconfig.json's used throughout the monorepo
+- [`/apps/api/src`](./apps/api/src) (Express API)
+- [`/apps/frontend/src/app`](./apps/frontend/src/app) (Next.js frontend)
+- [`/packages/ui`](./packages/ui) (React UI component library)
 
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
+#### Creating new packages/components/libs
 
-### Utilities
+Just a quick note here, as the setup may look unfamiliar. Turborepo isn't a fan of barrel files ([for good reasons](https://turbo.build/repo/docs/guides/tools/typescript#creating-entrypoints-to-the-package)) and uses explicit exports. So in order to export your new component (something like the [Hello](packages/ui/src/hello/index.tsx) component), you need to add it to the [package.json](packages/ui/package.json) exports array, to the [tsup.config.ts](packages/ui/tsup.config.ts) entry array, and then import it where you need it with: `import { Another } from "@repo/ui/another";`.
 
-This Turborepo has some additional tools already setup for you:
+Likewise, if you delete something without removing it from this array, or are only exporting a single component, you might get `Module not found` or `Unsupported Server Component type: undefined` sorts of errors. You'll also need to run `npm run dev` again to see your changes reflected.
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Jest](https://jestjs.io) test runner for all things JavaScript
-- [Prettier](https://prettier.io) for code formatting
+## Additional Resources
+
+- [Node.js Documentation](https://nodejs.org/en/docs/)
+- [Express Documentation](https://expressjs.com/en/starter/installing.html)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Turborepo Documentation](https://turbo.build/repo/docs)
+
+Feel free to reach out if you have any questions or run into any issues. Good luck with your interview!
