@@ -2,43 +2,24 @@
 
 import { useEffect, useState } from "react";
 
+const useData = (): string => {
+  const [data, setData] = useState("");
 
-type DietaryTypes = 'gluten-free' | 'vegetarian' | 'vegan';
-
-type DietaryLabel = DietaryTypes[]
-
-type Meals = [
-  {
-    id: number;
-    name: string;
-    calories: number;
-    dietaryLabel?: DietaryLabel[]
-  },
-];
-
-const useItems = (): Meals | never[] => {
-  const [items, setItems] = useState([]);
   useEffect(() => {
-    async function fetchItems() {
-      const response = await fetch("http://localhost:5001/meals");
-      const data = await response.json();
-      setItems(data);
+    async function fetchData(): Promise<void> {
+      const response = await fetch("http://localhost:5001/hello");
+      const json: unknown = await response.json();
+      setData(typeof json === "string" ? json : "");
     }
-    fetchItems().catch((e) => console.log({ e }));
+    fetchData().catch((_) => {
+      setData("Error");
+    });
   }, []);
-  return items;
+  return data;
 };
 
-export function MealsList(): JSX.Element {
-  const items = useItems();
-  console.log({ items });
+export function Hello(): JSX.Element {
+  const data = useData();
 
-  return (
-    <div>
-      <h1>Hello</h1>
-      {items?.map((item, idx) => (
-        <div key={`my-items-${idx}`}>{item.name}</div>
-      ))}
-    </div>
-  );
+  return <h1>{data}</h1>;
 }

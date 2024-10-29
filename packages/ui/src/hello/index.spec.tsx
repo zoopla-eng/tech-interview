@@ -1,11 +1,12 @@
-import { render } from '@testing-library/react'
-import { MealsList } from './index'
+import { render, waitFor } from "@testing-library/react";
+import { Hello } from "./index";
 
+describe("Hello", () => {
+  it("should render successfully", async () => {
+    const { baseElement } = render(<Hello />);
 
-describe('Hello', () => {
-  it('should render successfully', () => {
-    const { baseElement } = render(<MealsList />);
-    
-    expect(baseElement).toBeTruthy();
+    await waitFor(() => {
+      expect(baseElement).toBeTruthy();
+    });
   });
 });

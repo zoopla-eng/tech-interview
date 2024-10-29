@@ -1,32 +1,17 @@
-import { Link } from "@repo/ui/link";
-import { CounterButton } from "@repo/ui/counter-button";
-import { MealsList } from '@repo/ui/hello'
-
+import { Hello } from "@repo/ui/hello";
 
 export const metadata = {
-  title: "Store | Kitchen Sink",
+  title: "Demo Page",
 };
 
-export default function Store(): JSX.Element {
-
+export default function DemoPage(): JSX.Element {
   return (
     <div className="container">
-      <h1 className="title">
-        Store <br />
-        <span>Kitchen Sink</span>
-      </h1>
-      <CounterButton />
+      <h1 className="title">Demo Page</h1>
       <p className="description">
-        Built With{" "}
-        <Link href="https://turbo.build/repo" newTab>
-          Turborepo
-        </Link>
-        {" & "}
-        <Link href="https://nextjs.org/" newTab>
-          Next.js
-        </Link>
+        Built With Turborepo, Express, Next.js and React.
       </p>
-        <MealsList />
+      <Hello />
     </div>
   );
 }

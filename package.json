@@ -1,4 +1,5 @@
 {
+  "name": "zoopla-tech-interview",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -16,7 +17,6 @@
   "engines": {
     "node": ">=18"
   },
-  "name": "kitchen-sink",
   "packageManager": "npm@10.9.0",
   "workspaces": [
     "apps/*",
