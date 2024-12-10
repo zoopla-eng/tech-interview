@@ -36,7 +36,7 @@ You'll find a monorepo setup using [Turborepo](https://turbo.build/repo/docs), w
 - [`/apps/frontend/src/app`](./apps/frontend/src/app) (Next.js frontend)
 - [`/packages/ui`](./packages/ui) (React UI component library)
 
-#### Creating new packages/components/libs
+### Creating new packages/components/libs
 
 Just a quick note here, as the setup may look unfamiliar. Turborepo isn't a fan of barrel files ([for good reasons](https://turbo.build/repo/docs/guides/tools/typescript#creating-entrypoints-to-the-package)) and uses explicit exports. So in order to export your new component (something like the [Hello](packages/ui/src/hello/index.tsx) component), you need to add it to the [package.json](packages/ui/package.json) exports array, to the [tsup.config.ts](packages/ui/tsup.config.ts) entry array, and then import it where you need it with: `import { Another } from "@repo/ui/another";`.
 
