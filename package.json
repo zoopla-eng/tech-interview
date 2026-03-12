@@ -11,11 +11,11 @@
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
-    "turbo": "^2.2.3"
+    "prettier": "^3.8.1",
+    "turbo": "^2.8.16"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.9"
   },
   "packageManager": "npm@10.9.0",
   "workspaces": [
