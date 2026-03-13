@@ -3,6 +3,7 @@ node_modules
 .turbo
 *.log
 .next
+next-env.d.ts
 dist
 dist-ssr
 *.local
