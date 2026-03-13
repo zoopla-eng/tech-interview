@@ -18,7 +18,7 @@ const useData = (): string => {
   return data;
 };
 
-export function Hello(): JSX.Element {
+export function Hello(): React.JSX.Element {
   const data = useData();
 
   return <h1>{data}</h1>;

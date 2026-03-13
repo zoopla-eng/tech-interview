@@ -5,7 +5,7 @@ export const metadata = {
   title: "Demo Page",
 };
 
-export default function DemoPage(): JSX.Element {
+export default function DemoPage(): React.JSX.Element {
   return (
     <div className="container">
       <h1 className="title">Demo Page</h1>
